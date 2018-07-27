@@ -1,0 +1,105 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "crypto rates",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetCryptoRatesIntent",
+                    "slots": [
+                        {
+                            "name": "symbol",
+                            "type": "symbol"
+                        }
+                    ],
+                    "samples": [
+                        "current price of {symbol}",
+                        "price of {symbol}",
+                        "whats the price of {symbol}",
+                        "wheres {symbol} at",
+                        "how much is a {symbol} worth today"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "symbol",
+                    "values": [
+                        {
+                            "id": "ETH",
+                            "name": {
+                                "value": "Ethereum",
+                                "synonyms": [
+                                    "ether",
+                                    "Ethereum"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "SC",
+                            "name": {
+                                "value": "Siacoin",
+                                "synonyms": [
+                                    "siacoin",
+                                    "sia"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "BTC",
+                            "name": {
+                                "value": "Bitcoin",
+                                "synonyms": [
+                                    "satoshi",
+                                    "bitcoin"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "GetCryptoRatesIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "symbol",
+                            "type": "symbol",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1157007621850.1102766104257"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1157007621850.1102766104257",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "For which symbol?"
+                    }
+                ]
+            }
+        ]
+    }
+}
